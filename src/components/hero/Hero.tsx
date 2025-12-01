@@ -271,7 +271,7 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 1 + idx * 0.1 }}
-                  className="group flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-xl transition-all hover:bg-white/20 sm:gap-3 sm:px-4 sm:py-2.5"
+                  className="group flex w-[140px] items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-xl transition-all hover:bg-white/20 sm:w-[160px] sm:gap-3 sm:px-4 sm:py-2.5"
                 >
                   <div
                     className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${badge.gradient} shadow-lg transition-transform group-hover:scale-110 sm:h-11 sm:w-11`}
