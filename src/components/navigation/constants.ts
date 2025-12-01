@@ -1,92 +1,37 @@
 export const NAV_LINKS = [
   {
-    title: "Product",
-    sublinks: [
-      {
-        title: "Product 1",
-        href: "#",
-      },
-      {
-        title: "Product 2",
-        href: "#",
-      },
-      {
-        title: "Product 3",
-        href: "#",
-      },
-      {
-        title: "Product 4",
-        href: "#",
-      },
-    ],
+    title: "Home",
+    href: "#home",
   },
   {
-    title: "Solutions",
-    sublinks: [
-      {
-        title: "Solutions 1",
-        href: "#",
-      },
-      {
-        title: "Solutions 2",
-        href: "#",
-      },
-      {
-        title: "Solutions 3",
-        href: "#",
-      },
-    ],
+    title: "Testimonials",
+    href: "#testimonials",
   },
   {
-    title: "Documentation",
-    sublinks: [
-      {
-        title: "Docs 1",
-        href: "#",
-      },
-      {
-        title: "Docs 2",
-        href: "#",
-      },
-    ],
+    title: "Features",
+    href: "#features",
   },
   {
-    title: "Media",
-    sublinks: [
-      {
-        title: "Media 1",
-        href: "#",
-      },
-      {
-        title: "Media 2",
-        href: "#",
-      },
-      {
-        title: "Media 3",
-        href: "#",
-      },
-    ],
+    title: "How It Works",
+    href: "#how-it-works",
   },
   {
     title: "Pricing",
-    sublinks: [
-      {
-        title: "Pricing 1",
-        href: "#",
-      },
-      {
-        title: "Pricing 2",
-        href: "#",
-      },
-      {
-        title: "Pricing 3",
-        href: "#",
-      },
-    ],
+    href: "#pricing",
   },
 ];
 
+export const SECTION_IDS = [
+  "home",
+  "testimonials",
+  "features",
+  "how-it-works",
+  "pricing",
+];
+
+export const CTA_LINK = "https://www.clinicai.co/solicitar-demo";
+
 export type LinkType = {
   title: string;
-  sublinks: { title: string; href: string }[];
+  href: string;
 };

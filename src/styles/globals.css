@@ -7,7 +7,17 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Ocultar scrollbar */
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+}
+
+/* Utilidades personalizadas */
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -16,87 +26,6 @@ html {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-
-  /* Scrollbar personalizado para DJs */
-  .scrollbar-thin::-webkit-scrollbar {
-    height: 8px;
-  }
-  .scrollbar-thin::-webkit-scrollbar-track {
-    background: rgba(127, 29, 29, 0.3);
-    border-radius: 10px;
-  }
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    background: #dc2626;
-    border-radius: 10px;
-    transition: background 0.3s;
-  }
-  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: #ef4444;
-  }
-  .scrollbar-thin {
-    scrollbar-width: thin;
-    scrollbar-color: #dc2626 rgba(127, 29, 29, 0.3);
-  }
-}
-
-/* Fondo Navideño - Rojo con detalles verdes */
-@layer base {
-  body {
-    @apply bg-red-900;
-    background-attachment: fixed;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-      radial-gradient(
-        circle at 10% 20%,
-        rgba(34, 197, 94, 0.08) 0%,
-        transparent 40%
-      ),
-      radial-gradient(
-        circle at 90% 80%,
-        rgba(34, 197, 94, 0.06) 0%,
-        transparent 40%
-      );
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  main {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-/* Capa contenedora de copos para las tarjetas */
-.snow-layer {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 30;
-}
-
-/* Animación de rotación lenta para anillos de DJ */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
 }
 
 /* Cada copo individual */

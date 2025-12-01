@@ -1,23 +1,20 @@
 // pages/index.tsx
-import { useState } from "react";
 import Head from "next/head";
-import { HeroGlowFinder } from "@/components/hero-glowfinder/HeroGlowFinder";
-import { PopularTreatments } from "@/components/popular-treatments/PopularTreatments";
-import { GiftCards } from "@/components/gift-cards/GiftCards";
-import { FloatingCartButton } from "@/components/floating-cart-button/FloatingCartButton";
+import { Navbar } from "@/components/navigation/Navbar";
+import { Hero } from "@/components/hero/Hero";
+import { Testimonials } from "@/components/testimonials/Testimonials";
+import { PurposeBuilt } from "@/components/purpose-built/PurposeBuilt";
+import { HowItWorks } from "@/components/how-it-works/HowItWorks";
+import { Accuracy } from "@/components/accuracy/Accuracy";
+import { Integrations } from "@/components/integrations/Integrations";
+import { Pricing } from "@/components/pricing/Pricing";
+import { BuiltWithLove } from "@/components/built-with-love/BuiltWithLove";
+import { Footer } from "@/components/footer/Footer";
 import { font } from "@/fonts";
 import { generateMetaTags, siteConfig } from "@/lib/seo";
 
 export default function Home() {
   const metaTags = generateMetaTags();
-  const [searchFilters, setSearchFilters] = useState({
-    treatment: "",
-    location: "",
-  });
-
-  const handleSearch = (treatment: string, location: string) => {
-    setSearchFilters({ treatment, location });
-  };
 
   return (
     <>
@@ -80,24 +77,28 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest" />
 
         {/* Theme Color */}
-        <meta name="theme-color" content="#0d9488" />
+        <meta name="theme-color" content="#0066FF" />
 
         {/* Additional Meta Tags */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="author" content="GlowFinder" />
+        <meta name="author" content="VoiceDx" />
       </Head>
 
-      <main
-        className={`${font.className} min-h-screen bg-gradient-to-br from-teal-50 via-white to-emerald-50`}
-      >
-        <HeroGlowFinder onSearch={handleSearch} />
-        <PopularTreatments />
-        <GiftCards searchFilters={searchFilters} />
+      <Navbar />
 
-        {/* Botón flotante del carrito */}
-        <FloatingCartButton />
+      <main className={`${font.className} min-h-screen bg-white`}>
+        <Hero />
+        <Testimonials />
+        <PurposeBuilt />
+        <HowItWorks />
+        <Accuracy />
+        <Integrations />
+        <Pricing />
+        <BuiltWithLove />
       </main>
+
+      <Footer />
     </>
   );
 }
