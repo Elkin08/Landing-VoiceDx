@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ASSETS } from "@/config/assets";
+import dynamic from "next/dynamic";
 import { CTA_LINK } from "../navigation/constants";
 import {
   FiPlay,
@@ -14,34 +14,11 @@ import {
   FiVolumeX,
 } from "react-icons/fi";
 
+const VIDEO_ID = "ZaI9Kn-JEpI";
+
 export const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const smallVideoRef = useRef<HTMLVideoElement>(null);
-  const modalVideoRef = useRef<HTMLVideoElement>(null);
-
-  // Sincronizar mute entre ambos videos
-  useEffect(() => {
-    if (smallVideoRef.current) {
-      smallVideoRef.current.muted = isMuted;
-    }
-    if (modalVideoRef.current) {
-      modalVideoRef.current.muted = isMuted;
-    }
-  }, [isMuted]);
-
-  // Pausar video pequeño cuando se abre el modal
-  useEffect(() => {
-    if (isVideoModalOpen) {
-      if (smallVideoRef.current) {
-        smallVideoRef.current.pause();
-      }
-    } else {
-      if (smallVideoRef.current) {
-        smallVideoRef.current.play();
-      }
-    }
-  }, [isVideoModalOpen]);
 
   const handleScrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -228,31 +205,15 @@ export const Hero = () => {
 
                 {/* Video placeholder */}
                 <div className="group relative aspect-video cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900">
-                  {/* Video real */}
-                  <video
-                    ref={smallVideoRef}
-                    className="h-full w-full object-cover"
-                    autoPlay
-                    muted={isMuted}
-                    loop
-                    playsInline
-                    src="/VOICE DX ENG.mp4"
+                  {/* Video de YouTube con iframe */}
+                  <iframe
+                    src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=${VIDEO_ID}&controls=0&modestbranding=1&rel=0`}
+                    className="absolute inset-0 h-full w-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
                   />
 
-                  {/* Overlay para click to expand */}
-                  <div
-                    onClick={() => setIsVideoModalOpen(true)}
-                    className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 transition-opacity group-hover:opacity-100"
-                  >
-                    {/* Play button para expandir */}
-                    <motion.div whileHover={{ scale: 1.1 }}>
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/40 bg-white/20 backdrop-blur-sm transition-all sm:h-20 sm:w-20">
-                        <FiPlay className="ml-0.5 h-8 w-8 text-white sm:h-10 sm:w-10" />
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Mute button - esquina superior derecha con efecto */}
+                  {/* Botón de mute - esquina superior derecha con efecto */}
                   <motion.button
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -272,6 +233,19 @@ export const Hero = () => {
                     {/* Glow effect */}
                     <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 opacity-50 blur-md"></div>
                   </motion.button>
+
+                  {/* Overlay para click to expand */}
+                  <div
+                    onClick={() => setIsVideoModalOpen(true)}
+                    className="absolute inset-0 flex cursor-pointer items-center justify-center bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 transition-opacity group-hover:opacity-100"
+                  >
+                    {/* Play button para expandir */}
+                    <motion.div whileHover={{ scale: 1.1 }}>
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/40 bg-white/20 backdrop-blur-sm transition-all sm:h-20 sm:w-20">
+                        <FiPlay className="ml-0.5 h-8 w-8 text-white sm:h-10 sm:w-10" />
+                      </div>
+                    </motion.div>
+                  </div>
 
                   {/* Bottom label */}
                   <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
@@ -348,19 +322,16 @@ export const Hero = () => {
               className="relative w-full max-w-6xl"
               style={{ maxHeight: "85vh" }}
             >
-              {/* Video con aspect ratio */}
+              {/* Video de YouTube con controles usando iframe */}
               <div
                 className="relative w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl"
                 style={{ aspectRatio: "16/9", maxHeight: "85vh" }}
               >
-                <video
-                  ref={modalVideoRef}
-                  className="h-full w-full object-contain"
-                  controls
-                  autoPlay
-                  muted={isMuted}
-                  playsInline
-                  src="/VOICE DX ENG.mp4"
+                <iframe
+                  src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&controls=1&modestbranding=1&rel=0`}
+                  className="absolute inset-0 h-full w-full"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
                 />
               </div>
             </motion.div>
