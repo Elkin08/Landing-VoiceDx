@@ -13,49 +13,49 @@ import {
 const features = [
   {
     icon: FiZap,
-    title: "Real humans, real fast",
+    title: "Human support at your fingertips",
     description:
-      "Live, clinician-focused support ensures white-glove service for your team—so you're never alone when you need help.",
+      "Connect instantly with our clinical support team whenever you need guidance—because great technology deserves exceptional service.",
     gradient: "from-yellow-500 via-orange-500 to-red-500",
     glowColor: "shadow-orange-500/50",
   },
   {
     icon: FiTarget,
-    title: "Clinical-grade accuracy",
+    title: "Medical-grade precision",
     description:
-      "Purpose-built for any specialty visit, across 14+ languages, with leading-edge AI technology that learns your style.",
+      "Designed specifically for healthcare across all specialties and 14+ languages, powered by advanced AI that understands your unique documentation approach.",
     gradient: "from-blue-500 via-cyan-500 to-teal-500",
     glowColor: "shadow-cyan-500/50",
   },
   {
     icon: FiTrendingUp,
-    title: "Best-in-class innovation",
+    title: "Continuous improvement",
     description:
-      "Notes that learn from your edits, AI that adapts to your style, and an expanding set of features to ease your workflow.",
+      "Smart notes that evolve with every edit you make, AI technology that remembers your preferences, and regular feature updates to enhance your experience.",
     gradient: "from-purple-500 via-pink-500 to-rose-500",
     glowColor: "shadow-pink-500/50",
   },
   {
     icon: FiShield,
-    title: "Enterprise-grade security",
+    title: "Military-grade protection",
     description:
-      "HIPAA compliant, SOC 2 certified, with end-to-end encryption. Your patient data is always safe and secure.",
+      "Fully HIPAA compliant and SOC 2 certified with complete end-to-end encryption. Your patient information remains completely protected at all times.",
     gradient: "from-green-500 via-emerald-500 to-teal-500",
     glowColor: "shadow-emerald-500/50",
   },
   {
     icon: FiUsers,
-    title: "Team collaboration",
+    title: "Unified team workspace",
     description:
-      "Share templates, insights, and best practices across your team. Build a knowledge base that grows with you.",
+      "Collaborate seamlessly by sharing documentation templates, clinical insights, and proven workflows. Create a collective knowledge hub for your entire practice.",
     gradient: "from-indigo-500 via-purple-500 to-pink-500",
     glowColor: "shadow-purple-500/50",
   },
   {
     icon: FiCpu,
-    title: "AI that learns",
+    title: "Intelligent adaptation",
     description:
-      "Our AI continuously improves from your feedback, adapting to your unique documentation style and preferences.",
+      "Advanced AI that gets smarter with each interaction, personalizing itself to match your specific documentation patterns and clinical workflow.",
     gradient: "from-cyan-500 via-blue-500 to-indigo-500",
     glowColor: "shadow-blue-500/50",
   },
@@ -95,14 +95,15 @@ export const PurposeBuilt = () => {
           </motion.div>
 
           <h2 className="mb-6 text-5xl font-bold leading-tight text-gray-900 md:text-6xl lg:text-7xl">
-            Purpose-built AI scribe,{" "}
+            Built exclusively for clinicians,{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              not just a side project
+              not as an afterthought
             </span>
           </h2>
           <p className="text-xl leading-relaxed text-gray-600 md:text-2xl">
-            Generic EHR add-ons treat documentation as an after-thought. VoiceDx
-            is singularly focused on building tools for your clinical workflow.
+            While other platforms add documentation as a secondary feature,
+            VoiceDx is dedicated entirely to perfecting your clinical charting
+            experience.
           </p>
         </motion.div>
 

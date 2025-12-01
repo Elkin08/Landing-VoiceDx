@@ -77,11 +77,11 @@ export const Hero = () => {
 
             {/* Title */}
             <h1 className="mb-6 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-              <span className="mb-2 block text-white">Transform Your</span>
+              <span className="mb-2 block text-white">AI-Powered</span>
               <span className="mb-2 block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Clinical Documentation
+                Medical Documentation
               </span>
-              <span className="block text-white">with AI</span>
+              <span className="block text-white">That Saves Hours Daily</span>
             </h1>
 
             {/* Subtitle */}
@@ -91,17 +91,20 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:mx-0"
             >
-              Purpose-built medical scribe delivering{" "}
-              <span className="font-semibold text-cyan-400">note accuracy</span>
+              Your intelligent clinical assistant that captures conversations
+              and generates{" "}
+              <span className="font-semibold text-cyan-400">
+                precise medical notes
+              </span>
               ,{" "}
               <span className="font-semibold text-blue-400">
-                effortless workflow
+                streamlines your workflow
               </span>
-              , and{" "}
+              , and provides{" "}
               <span className="font-semibold text-purple-400">
-                real-human support
+                dedicated human assistance
               </span>
-              . Save 80% of documentation time.
+              . Reclaim up to 2 hours every day.
             </motion.p>
 
             {/* CTAs */}
@@ -127,60 +130,6 @@ export const Hero = () => {
               >
                 View Pricing
               </a>
-            </motion.div>
-
-            {/* Badges */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:justify-start"
-            >
-              {[
-                {
-                  icon: FiShield,
-                  label: "HIPAA",
-                  sublabel: "Compliant",
-                  gradient: "from-green-500 to-emerald-500",
-                },
-                {
-                  icon: FiShield,
-                  label: "SOC2",
-                  sublabel: "Certified",
-                  gradient: "from-blue-500 to-cyan-500",
-                },
-                {
-                  icon: FiCheck,
-                  label: "99.8%",
-                  sublabel: "Accuracy",
-                  gradient: "from-purple-500 to-pink-500",
-                },
-              ].map((badge, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 1 + idx * 0.1 }}
-                  className="group flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-xl transition-all hover:bg-white/20 sm:gap-3 sm:px-4 sm:py-2.5"
-                >
-                  <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${badge.gradient} shadow-lg transition-transform group-hover:scale-110 sm:h-11 sm:w-11`}
-                  >
-                    <badge.icon
-                      className="h-5 w-5 text-white sm:h-5 sm:w-5"
-                      strokeWidth={2.5}
-                    />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white sm:text-sm">
-                      {badge.label}
-                    </div>
-                    <div className="text-[10px] text-gray-400 sm:text-xs">
-                      {badge.sublabel}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
             </motion.div>
           </motion.div>
 
@@ -283,12 +232,72 @@ export const Hero = () => {
                 </div>
               </motion.div>
             </div>
+
+            {/* Badges debajo del video */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+            >
+              {[
+                {
+                  icon: FiShield,
+                  label: "HIPAA",
+                  sublabel: "Compliant",
+                  gradient: "from-green-500 to-emerald-500",
+                },
+                {
+                  icon: FiShield,
+                  label: "SOC2",
+                  sublabel: "Certified",
+                  gradient: "from-blue-500 to-cyan-500",
+                },
+                {
+                  icon: FiCheck,
+                  label: "FHIR R4",
+                  sublabel: "Compatible",
+                  gradient: "from-indigo-500 to-purple-500",
+                },
+                {
+                  icon: FiCheck,
+                  label: "99.8%",
+                  sublabel: "Accuracy",
+                  gradient: "from-purple-500 to-pink-500",
+                },
+              ].map((badge, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 1 + idx * 0.1 }}
+                  className="group flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-xl transition-all hover:bg-white/20 sm:gap-3 sm:px-4 sm:py-2.5"
+                >
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${badge.gradient} shadow-lg transition-transform group-hover:scale-110 sm:h-11 sm:w-11`}
+                  >
+                    <badge.icon
+                      className="h-5 w-5 text-white sm:h-5 sm:w-5"
+                      strokeWidth={2.5}
+                    />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white sm:text-sm">
+                      {badge.label}
+                    </div>
+                    <div className="text-[10px] text-gray-400 sm:text-xs">
+                      {badge.sublabel}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
         </div>
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-orange-900/50 via-orange-950/30 to-transparent"></div>
 
       {/* Video Modal */}
       <AnimatePresence>

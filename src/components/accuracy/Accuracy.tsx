@@ -5,17 +5,17 @@ import { FiCheck, FiStar, FiAward } from "react-icons/fi";
 
 const accuracyPoints = [
   {
-    text: "Medical terms and prescription names are correctly transcribed, even the tricky ones.",
+    text: "Complex medical vocabulary and medication names transcribe flawlessly every time.",
     icon: FiCheck,
     gradient: "from-blue-500 to-cyan-500",
   },
   {
-    text: "All the important info is captured—background conversations aren't included.",
+    text: "Clinical details are preserved precisely while filtering out irrelevant ambient noise.",
     icon: FiCheck,
     gradient: "from-purple-500 to-pink-500",
   },
   {
-    text: "Notes are automatically organized into clinical format, so they're EHR-ready.",
+    text: "Documentation flows naturally into proper clinical structure, ready for seamless system integration.",
     icon: FiCheck,
     gradient: "from-indigo-500 to-purple-500",
   },
@@ -121,14 +121,14 @@ export const Accuracy = () => {
               className="mb-6 inline-block"
             >
               <span className="rounded-full border border-blue-500/20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 px-4 py-2 text-sm font-semibold text-blue-600">
-                Clinical Accuracy
+                Precision
               </span>
             </motion.div>
 
             <h2 className="mb-8 text-5xl font-bold leading-tight md:text-6xl">
-              <span className="text-gray-900">Accuracy you can </span>
+              <span className="text-gray-900">Dependable </span>
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                trust
+                precision
               </span>
               .
             </h2>
@@ -173,7 +173,7 @@ export const Accuracy = () => {
 
             {/* What you get */}
             <h3 className="mb-6 text-2xl font-bold text-gray-900">
-              What you get when clinicians train AI
+              The advantage of physician-trained artificial intelligence
             </h3>
 
             <div className="space-y-5">

@@ -120,19 +120,23 @@ export const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-gradient-to-br from-purple-950 via-blue-950 to-indigo-950 py-32"
+      className="relative overflow-hidden bg-gradient-to-br from-teal-950 via-cyan-950 to-slate-950 py-32"
     >
       {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute left-1/4 top-1/3 h-[600px] w-[600px] animate-pulse rounded-full bg-purple-600 blur-[150px] filter"></div>
+      <div className="absolute inset-0 overflow-hidden opacity-25">
+        <div className="absolute left-1/4 top-1/3 h-[600px] w-[600px] animate-pulse rounded-full bg-teal-600 blur-[150px] filter"></div>
         <div
-          className="absolute bottom-1/3 right-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-blue-600 blur-[130px] filter"
+          className="absolute bottom-1/3 right-1/4 h-[500px] w-[500px] animate-pulse rounded-full bg-cyan-600 blur-[130px] filter"
           style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute left-1/2 top-1/2 h-[400px] w-[400px] animate-pulse rounded-full bg-emerald-600 blur-[120px] filter"
+          style={{ animationDelay: "1s" }}
         ></div>
       </div>
 
       {/* Grid pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -151,18 +155,18 @@ export const Testimonials = () => {
             className="mb-6 inline-block"
           >
             <span className="rounded-full border border-purple-400/30 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 py-2 text-sm font-semibold text-purple-300 backdrop-blur-sm">
-              Testimonials
+              Client Stories
             </span>
           </motion.div>
 
           <h2 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-            Loved by over{" "}
+            Trusted by more than{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
-              20,000 clinicians
+              17,000 healthcare providers
             </span>
           </h2>
           <p className="text-xl text-gray-300 md:text-2xl">
-            (and their families)
+            (plus the people who matter most to them)
           </p>
         </motion.div>
 

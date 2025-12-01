@@ -5,23 +5,23 @@ import { FiCheck } from "react-icons/fi";
 import { CTA_LINK } from "../navigation/constants";
 
 const integrations = [
-  { name: "Epic", gradient: "from-blue-600 to-blue-700" },
-  { name: "Cerner", gradient: "from-red-600 to-orange-600" },
-  { name: "Athenahealth", gradient: "from-green-600 to-emerald-600" },
-  { name: "Allscripts", gradient: "from-purple-600 to-indigo-600" },
-  { name: "eClinicalWorks", gradient: "from-cyan-600 to-blue-600" },
-  { name: "NextGen", gradient: "from-pink-600 to-rose-600" },
-  { name: "MEDITECH", gradient: "from-indigo-600 to-purple-600" },
-  { name: "DrChrono", gradient: "from-teal-600 to-cyan-600" },
+  { name: "HL7 FHIR R4", gradient: "from-blue-600 to-blue-700" },
+  { name: "SMART on FHIR", gradient: "from-red-600 to-orange-600" },
+  { name: "CDS Hooks", gradient: "from-green-600 to-emerald-600" },
+  { name: "FHIR REST API", gradient: "from-purple-600 to-indigo-600" },
+  { name: "Bulk Data", gradient: "from-cyan-600 to-blue-600" },
+  { name: "OAuth 2.0", gradient: "from-pink-600 to-rose-600" },
+  { name: "OpenID Connect", gradient: "from-indigo-600 to-purple-600" },
+  { name: "FHIR Subscriptions", gradient: "from-teal-600 to-cyan-600" },
 ];
 
 const benefits = [
-  "One-click push to EHR",
-  "Bi-directional sync",
-  "Custom field mapping",
-  "Real-time updates",
-  "Secure API connection",
-  "HIPAA compliant",
+  "Full FHIR R4 compliance",
+  "Real-time data exchange",
+  "Standardized resources",
+  "Interoperable by design",
+  "Secure authentication",
+  "RESTful API access",
 ];
 
 export const Integrations = () => {
@@ -67,12 +67,12 @@ export const Integrations = () => {
           <h2 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
             Seamless{" "}
             <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400 bg-clip-text text-transparent">
-              EHR Integration
+              FHIR Integration
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl">
-            VoiceDx integrates directly with your existing EHR system. API-first
-            approach means your data flows where you need it.
+            VoiceDx is built on FHIR standards for maximum interoperability.
+            Connect seamlessly with any FHIR-compliant system.
           </p>
         </motion.div>
 
@@ -156,11 +156,11 @@ export const Integrations = () => {
           className="mx-auto max-w-4xl rounded-2xl border border-white/20 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-rose-500/10 p-10 text-center backdrop-blur-xl"
         >
           <h3 className="mb-4 text-2xl font-bold text-white md:text-3xl">
-            Don't see your EHR?
+            Require specialized FHIR configuration?
           </h3>
           <p className="mb-6 text-lg text-gray-300">
-            We're constantly adding new integrations. Let us know what you need
-            and we'll prioritize it.
+            Our team handles tailored FHIR profiles and resource extensions.
+            Share your technical specifications with us.
           </p>
           <a
             href={CTA_LINK}
@@ -168,7 +168,7 @@ export const Integrations = () => {
             rel="noopener noreferrer"
             className="inline-block transform rounded-xl bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 px-8 py-4 font-bold text-white shadow-2xl shadow-purple-500/50 transition-all hover:scale-105 hover:shadow-purple-500/80"
           >
-            Contact us about your EHR →
+            Connect with our integration team →
           </a>
         </motion.div>
       </div>

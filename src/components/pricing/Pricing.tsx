@@ -7,7 +7,7 @@ import { CTA_LINK } from "../navigation/constants";
 const pricingTiers = [
   {
     name: "Starter",
-    subtitle: "Perfect for solo practitioners",
+    subtitle: "Ideal for individual clinicians",
     price: "$90",
     period: "/mo",
     clinicians: "1 Clinician",
@@ -15,17 +15,18 @@ const pricingTiers = [
     gradient: "from-blue-500 via-cyan-500 to-blue-600",
     glowColor: "shadow-blue-500/50",
     features: [
-      "7-day free trial",
-      "Unlimited note generation",
-      "HIPAA compliant security",
-      "Real-time transcription",
-      "EHR integration",
-      "Email support",
+      "7-day trial at no cost",
+      "Limitless documentation",
+      "Full HIPAA compliance",
+      "Instant voice transcription",
+      "FHIR R4 compatible exports",
+      "Smart template library",
+      "Standard email assistance",
     ],
   },
   {
     name: "Professional",
-    subtitle: "Best for growing practices",
+    subtitle: "Designed for expanding teams",
     price: "$84",
     period: "/mo per clinician",
     clinicians: "2-9 Clinicians",
@@ -34,19 +35,20 @@ const pricingTiers = [
     gradient: "from-purple-500 via-pink-500 to-purple-600",
     glowColor: "shadow-purple-500/60",
     features: [
-      "Team template library",
-      "Unlimited note generation",
-      "HIPAA compliant security",
-      "Real-time transcription",
-      "EHR integration",
-      "Priority support",
-      "Team analytics dashboard",
-      "Custom workflows",
+      "Shared template collection",
+      "Limitless documentation",
+      "Full HIPAA compliance",
+      "Instant voice transcription",
+      "FHIR R4 compatible exports",
+      "Advanced FHIR API access",
+      "Premium support access",
+      "Team performance metrics",
+      "Personalized workflows",
     ],
   },
   {
     name: "Enterprise",
-    subtitle: "Tailored for large organizations",
+    subtitle: "Built for healthcare systems",
     price: "Custom",
     period: "pricing",
     clinicians: "10+ Clinicians",
@@ -54,15 +56,15 @@ const pricingTiers = [
     gradient: "from-indigo-500 via-purple-600 to-pink-600",
     glowColor: "shadow-indigo-500/50",
     features: [
-      "Everything in Professional",
-      "License management portal",
-      "Organization-wide BAA",
-      "Custom integrations",
-      "Dedicated account manager",
-      "Training & onboarding",
-      "Advanced analytics",
-      "Volume discounts",
-      "SLA guarantee",
+      "All Professional features",
+      "Centralized license control",
+      "Enterprise-wide agreements",
+      "Tailored integrations",
+      "Personal success manager",
+      "Comprehensive team training",
+      "In-depth usage analytics",
+      "Scalable pricing",
+      "Guaranteed uptime SLA",
     ],
   },
 ];
@@ -106,19 +108,19 @@ export const Pricing = () => {
             className="mb-6 inline-block"
           >
             <span className="rounded-full border border-blue-400/30 bg-gradient-to-r from-blue-500/20 to-purple-500/20 px-4 py-2 text-sm font-semibold text-blue-300 backdrop-blur-sm">
-              Flexible Pricing
+              Pricing Options
             </span>
           </motion.div>
 
           <h2 className="mb-3 text-2xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:mb-6 lg:text-6xl">
-            Choose Your{" "}
+            Select the{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Perfect Plan
+              Right Tier
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
-            Simple, transparent pricing that scales with your practice. Start
-            with a free trial, no credit card required.
+            Clear, straightforward pricing that grows alongside your needs.
+            Begin with our risk-free trial—no payment information necessary.
           </p>
         </motion.div>
 
@@ -246,20 +248,20 @@ export const Pricing = () => {
           className="rounded-xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 p-5 text-center backdrop-blur-xl sm:rounded-2xl sm:p-8"
         >
           <p className="mb-2 text-sm leading-relaxed text-gray-300 sm:text-lg">
-            We're dedicated to making VoiceDx accessible to all aspiring
-            clinicians.
+            Our mission includes supporting the next generation of healthcare
+            professionals.
           </p>
           <p className="text-sm font-semibold text-white sm:text-base">
-            If you're a student or trainee, please{" "}
+            Students and residents should{" "}
             <a
               href={CTA_LINK}
               className="text-cyan-400 underline decoration-cyan-400/50 transition-colors hover:text-cyan-300 hover:decoration-cyan-300"
               target="_blank"
               rel="noopener noreferrer"
             >
-              reach out
+              get in touch
             </a>{" "}
-            for special pricing.
+            for discounted rates.
           </p>
         </motion.div>
       </div>

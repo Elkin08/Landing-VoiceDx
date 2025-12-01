@@ -6,30 +6,30 @@ import { FiMessageSquare, FiMic, FiSend, FiCheckCircle } from "react-icons/fi";
 const steps = [
   {
     id: 1,
-    title: "Before the visit",
-    subtitle: "Get ready with context",
+    title: "Pre-appointment preparation",
+    subtitle: "Smart context loading",
     description:
-      "Start ready with visit summaries and chat that gives deeper patient context.",
+      "Begin with intelligent visit previews and conversational AI that provides comprehensive patient background information.",
     icon: FiMessageSquare,
     gradient: "from-blue-500 via-cyan-500 to-blue-600",
     glowColor: "shadow-blue-500/50",
   },
   {
     id: 2,
-    title: "During the visit",
-    subtitle: "Capture everything",
+    title: "Live consultation",
+    subtitle: "Complete documentation",
     description:
-      "Capture every detail with our best-in-class scribe that learns your style and adapts in real-time.",
+      "Record every important moment with our intelligent medical scribe that understands your documentation preferences and adjusts automatically.",
     icon: FiMic,
     gradient: "from-purple-500 via-pink-500 to-purple-600",
     glowColor: "shadow-purple-500/50",
   },
   {
     id: 3,
-    title: "After the visit",
-    subtitle: "Push to your EHR",
+    title: "Post-visit workflow",
+    subtitle: "Finalize and export",
     description:
-      "Generate codes, letters, and patient instructions, then push directly to your EHR with one click.",
+      "Automatically create billing codes, patient communications, and follow-up instructions. Export FHIR-compliant structured data ready for any healthcare system.",
     icon: FiSend,
     gradient: "from-indigo-500 via-purple-600 to-pink-600",
     glowColor: "shadow-indigo-500/50",
@@ -76,14 +76,14 @@ export const HowItWorks = () => {
           </motion.div>
 
           <h2 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-            Off-the-charts{" "}
+            Remarkably{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              simplicity
+              intuitive
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl">
-            VoiceDx's full suite of AI features supports you through every step
-            of the visit.
+            VoiceDx's comprehensive AI toolkit accompanies you throughout the
+            entire patient encounter.
           </p>
         </motion.div>
 
@@ -165,7 +165,7 @@ export const HowItWorks = () => {
               "Smart visit summaries",
               "Automatic coding (ICD-10, CPT)",
               "Patient instructions generation",
-              "EHR integration",
+              "FHIR R4 data export",
               "Multi-language support",
               "Custom templates",
               "HIPAA compliant",
