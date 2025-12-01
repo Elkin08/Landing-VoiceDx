@@ -1,9 +1,16 @@
+import Image from "next/image";
+
 export const Logo = () => {
   return (
     <div className="flex items-center gap-2">
-      <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-2xl font-bold text-transparent">
-        VoiceDx
-      </span>
+      <Image
+        src="/voicedx.png"
+        alt="VoiceDx Logo"
+        width={140}
+        height={40}
+        className="h-auto w-auto"
+        priority
+      />
     </div>
   );
 };
@@ -11,9 +18,13 @@ export const Logo = () => {
 export const LogoSmall = () => {
   return (
     <div className="flex items-center gap-2">
-      <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-xl font-bold text-transparent">
-        VoiceDx
-      </span>
+      <Image
+        src="/voicedx.png"
+        alt="VoiceDx Logo"
+        width={120}
+        height={35}
+        className="h-auto w-auto"
+      />
     </div>
   );
 };
@@ -21,9 +32,13 @@ export const LogoSmall = () => {
 export const LogoLarge = () => {
   return (
     <div className="flex items-center gap-2">
-      <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-3xl font-bold text-transparent">
-        VoiceDx
-      </span>
+      <Image
+        src="/voicedx.png"
+        alt="VoiceDx Logo"
+        width={160}
+        height={45}
+        className="h-auto w-auto"
+      />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 // Configuración SEO centralizada
 export const siteConfig = {
   name: "VoiceDx",
-  title: "VoiceDx - AI-Powered Medical Transcription for Clinicians",
+  title: "VoiceDx",
   description:
     "Transform your clinical documentation with AI. VoiceDx delivers accurate medical transcription, seamless EHR integration, and saves clinicians 80% of documentation time. HIPAA compliant and purpose-built for healthcare.",
   url: "https://www.voicedx.com",

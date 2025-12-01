@@ -71,7 +71,7 @@ export const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 py-32"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 py-16 sm:py-24 lg:py-32"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
@@ -96,7 +96,7 @@ export const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-12 text-center sm:mb-16 lg:mb-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -110,20 +110,20 @@ export const Pricing = () => {
             </span>
           </motion.div>
 
-          <h2 className="mb-6 text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
+          <h2 className="mb-4 text-3xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:mb-6 lg:text-6xl">
             Choose Your{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Perfect Plan
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-300 md:text-2xl">
+          <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
             Simple, transparent pricing that scales with your practice. Start
             with a free trial, no credit card required.
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="mx-auto mb-16 grid max-w-7xl gap-8 lg:grid-cols-3 lg:gap-6">
+        <div className="mx-auto mb-12 grid max-w-7xl gap-6 sm:mb-14 sm:gap-8 lg:mb-16 lg:grid-cols-3 lg:gap-6">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={tier.name}

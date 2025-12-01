@@ -1,11 +1,48 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ASSETS } from "@/config/assets";
 import { CTA_LINK } from "../navigation/constants";
-import { FiPlay, FiCheck, FiShield, FiZap } from "react-icons/fi";
+import {
+  FiPlay,
+  FiCheck,
+  FiShield,
+  FiZap,
+  FiX,
+  FiVolume2,
+  FiVolumeX,
+} from "react-icons/fi";
 
 export const Hero = () => {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const smallVideoRef = useRef<HTMLVideoElement>(null);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
+
+  // Sincronizar mute entre ambos videos
+  useEffect(() => {
+    if (smallVideoRef.current) {
+      smallVideoRef.current.muted = isMuted;
+    }
+    if (modalVideoRef.current) {
+      modalVideoRef.current.muted = isMuted;
+    }
+  }, [isMuted]);
+
+  // Pausar video pequeño cuando se abre el modal
+  useEffect(() => {
+    if (isVideoModalOpen) {
+      if (smallVideoRef.current) {
+        smallVideoRef.current.pause();
+      }
+    } else {
+      if (smallVideoRef.current) {
+        smallVideoRef.current.play();
+      }
+    }
+  }, [isVideoModalOpen]);
+
   const handleScrollToPricing = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById("pricing");
@@ -21,7 +58,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 pb-32 pt-32 lg:pb-40 lg:pt-40"
+      className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-blue-950 to-purple-950 pb-16 pt-24 sm:pb-24 sm:pt-28 lg:pb-40 lg:pt-40"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -40,7 +77,7 @@ export const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,16 +90,16 @@ export const Hero = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-8 inline-block"
+              className="mb-6 inline-block"
             >
-              <span className="flex items-center gap-2 rounded-full border border-cyan-400/30 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-5 py-2.5 text-sm font-bold text-cyan-300 backdrop-blur-sm">
-                <FiZap className="h-4 w-4" />
+              <span className="flex items-center gap-2 rounded-full border border-cyan-400/30 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-2 text-xs font-bold text-cyan-300 backdrop-blur-sm sm:text-sm">
+                <FiZap className="h-3 w-3 sm:h-4 sm:w-4" />
                 AI-Powered Medical Scribe
               </span>
             </motion.div>
 
             {/* Title */}
-            <h1 className="mb-8 text-5xl font-extrabold leading-tight sm:text-6xl lg:text-7xl xl:text-8xl">
+            <h1 className="mb-6 text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
               <span className="mb-2 block text-white">Transform Your</span>
               <span className="mb-2 block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Clinical Documentation
@@ -75,9 +112,9 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mx-auto mb-10 max-w-2xl text-xl leading-relaxed text-gray-300 sm:text-2xl lg:mx-0"
+              className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:mx-0"
             >
-              Purpose-built AI medical scribe delivering{" "}
+              Purpose-built medical scribe delivering{" "}
               <span className="font-semibold text-cyan-400">note accuracy</span>
               ,{" "}
               <span className="font-semibold text-blue-400">
@@ -95,13 +132,13 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-12 flex flex-col justify-center gap-5 sm:flex-row lg:justify-start"
+              className="mb-8 flex flex-col justify-center gap-3 sm:mb-10 sm:flex-row sm:gap-4 lg:justify-start"
             >
               <a
                 href={CTA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 px-10 py-5 text-lg font-bold text-white shadow-2xl shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/70"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 px-8 py-4 text-base font-bold text-white shadow-2xl shadow-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-blue-500/70"
               >
                 <span className="relative z-10">Request a Demo</span>
                 <div className="absolute inset-0 translate-x-[-200%] -skew-x-12 transform bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-1000 group-hover:translate-x-[200%]"></div>
@@ -109,7 +146,7 @@ export const Hero = () => {
               <a
                 href="#pricing"
                 onClick={handleScrollToPricing}
-                className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 bg-white/10 px-10 py-5 text-lg font-bold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20"
+                className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 bg-white/10 px-8 py-4 text-base font-bold text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/50 hover:bg-white/20"
               >
                 View Pricing
               </a>
@@ -120,7 +157,7 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap items-center justify-center gap-6 lg:justify-start"
+              className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:justify-start"
             >
               {[
                 {
@@ -147,21 +184,21 @@ export const Hero = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 1 + idx * 0.1 }}
-                  className="group flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-5 py-3 backdrop-blur-xl transition-all hover:bg-white/20"
+                  className="group flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-3 py-2 backdrop-blur-xl transition-all hover:bg-white/20 sm:gap-3 sm:px-4 sm:py-2.5"
                 >
                   <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${badge.gradient} shadow-lg transition-transform group-hover:scale-110`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${badge.gradient} shadow-lg transition-transform group-hover:scale-110 sm:h-11 sm:w-11`}
                   >
                     <badge.icon
-                      className="h-6 w-6 text-white"
+                      className="h-5 w-5 text-white sm:h-5 sm:w-5"
                       strokeWidth={2.5}
                     />
                   </div>
                   <div>
-                    <div className="text-sm font-bold text-white">
+                    <div className="text-xs font-bold text-white sm:text-sm">
                       {badge.label}
                     </div>
-                    <div className="text-xs text-gray-400">
+                    <div className="text-[10px] text-gray-400 sm:text-xs">
                       {badge.sublabel}
                     </div>
                   </div>
@@ -184,27 +221,63 @@ export const Hero = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="relative rounded-3xl border border-white/20 bg-gradient-to-br from-white/10 to-white/5 p-8 shadow-2xl backdrop-blur-2xl"
+                className="relative rounded-3xl border border-white/5 bg-gradient-to-br from-white/5 to-white/5 p-8 shadow-2xl backdrop-blur-2xl"
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500 opacity-20 blur-2xl"></div>
 
                 {/* Video placeholder */}
-                <div className="group relative flex aspect-video cursor-pointer items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-blue-500/20 to-purple-500/20"></div>
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/40 bg-white/20 backdrop-blur-sm transition-all group-hover:bg-white/30"
+                <div className="group relative aspect-video cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900">
+                  {/* Video real */}
+                  <video
+                    ref={smallVideoRef}
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    muted={isMuted}
+                    loop
+                    playsInline
+                    src="/VOICE DX ENG.mp4"
+                  />
+
+                  {/* Overlay para click to expand */}
+                  <div
+                    onClick={() => setIsVideoModalOpen(true)}
+                    className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 opacity-0 transition-opacity group-hover:opacity-100"
                   >
-                    <FiPlay className="ml-1 h-10 w-10 text-white" />
-                  </motion.div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="rounded-lg bg-black/50 px-4 py-2 backdrop-blur-md">
-                      <div className="text-sm font-semibold text-white">
-                        Watch Demo
+                    {/* Play button para expandir */}
+                    <motion.div whileHover={{ scale: 1.1 }}>
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/40 bg-white/20 backdrop-blur-sm transition-all sm:h-20 sm:w-20">
+                        <FiPlay className="ml-0.5 h-8 w-8 text-white sm:h-10 sm:w-10" />
                       </div>
-                      <div className="text-xs text-gray-300">
-                        See VoiceDx in action
+                    </motion.div>
+                  </div>
+
+                  {/* Mute button - esquina superior derecha con efecto */}
+                  <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.8 }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsMuted(!isMuted);
+                    }}
+                    className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/50 backdrop-blur-md transition-all hover:scale-110 hover:shadow-cyan-500/70 sm:right-4 sm:top-4 sm:h-11 sm:w-11"
+                    aria-label={isMuted ? "Activar sonido" : "Silenciar"}
+                  >
+                    {isMuted ? (
+                      <FiVolumeX className="h-5 w-5 sm:h-5 sm:w-5" />
+                    ) : (
+                      <FiVolume2 className="h-5 w-5 sm:h-5 sm:w-5" />
+                    )}
+                    {/* Glow effect */}
+                    <div className="absolute inset-0 -z-10 animate-pulse rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 opacity-50 blur-md"></div>
+                  </motion.button>
+
+                  {/* Bottom label */}
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4">
+                    <div className="rounded-lg bg-black/50 px-3 py-1.5 backdrop-blur-md sm:px-4 sm:py-2">
+                      <div className="text-xs font-semibold text-white sm:text-sm">
+                        Click to expand
                       </div>
                     </div>
                   </div>
@@ -216,11 +289,11 @@ export const Hero = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="absolute -left-8 top-1/4 hidden rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 p-6 shadow-2xl shadow-cyan-500/50 lg:block"
+                className="absolute -left-4 top-1/4 hidden rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-4 shadow-2xl shadow-cyan-500/50 lg:block"
               >
                 <div className="text-white">
-                  <div className="mb-1 text-4xl font-bold">2hrs+</div>
-                  <div className="text-sm opacity-90">Saved Daily</div>
+                  <div className="mb-0.5 text-2xl font-bold">2hrs+</div>
+                  <div className="text-xs opacity-90">Saved Daily</div>
                 </div>
               </motion.div>
 
@@ -228,11 +301,11 @@ export const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
-                className="absolute -right-8 bottom-1/4 hidden rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 p-6 shadow-2xl shadow-purple-500/50 lg:block"
+                className="absolute -right-4 bottom-1/4 hidden rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 p-4 shadow-2xl shadow-purple-500/50 lg:block"
               >
                 <div className="text-white">
-                  <div className="mb-1 text-4xl font-bold">20K+</div>
-                  <div className="text-sm opacity-90">Clinicians</div>
+                  <div className="mb-0.5 text-2xl font-bold">20K+</div>
+                  <div className="text-xs opacity-90">Clinicians</div>
                 </div>
               </motion.div>
             </div>
@@ -242,6 +315,58 @@ export const Hero = () => {
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {isVideoModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 sm:p-6 md:p-8"
+            onClick={() => setIsVideoModalOpen(false)}
+          >
+            {/* Close button */}
+            <motion.button
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ delay: 0.1 }}
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md transition-all hover:bg-white/20 sm:h-12 sm:w-12"
+            >
+              <FiX className="h-5 w-5 sm:h-6 sm:w-6" />
+            </motion.button>
+
+            {/* Video container */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ delay: 0.1 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-6xl"
+              style={{ maxHeight: "85vh" }}
+            >
+              {/* Video con aspect ratio */}
+              <div
+                className="relative w-full overflow-hidden rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl"
+                style={{ aspectRatio: "16/9", maxHeight: "85vh" }}
+              >
+                <video
+                  ref={modalVideoRef}
+                  className="h-full w-full object-contain"
+                  controls
+                  autoPlay
+                  muted={isMuted}
+                  playsInline
+                  src="/VOICE DX ENG.mp4"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

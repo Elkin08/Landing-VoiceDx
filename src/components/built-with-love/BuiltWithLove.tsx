@@ -5,7 +5,7 @@ import { FiHeart, FiMail, FiArrowRight } from "react-icons/fi";
 
 export const BuiltWithLove = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-pink-950 via-purple-950 to-indigo-950 py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-pink-950 via-purple-950 to-indigo-950 py-16 sm:py-24 lg:py-32">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute left-1/4 top-1/4 h-96 w-96 animate-pulse rounded-full bg-pink-600 blur-[120px] filter"></div>
@@ -19,7 +19,7 @@ export const BuiltWithLove = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px]"></div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left - Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -39,7 +39,7 @@ export const BuiltWithLove = () => {
               </div>
             </motion.div>
 
-            <h2 className="mb-8 text-5xl font-bold leading-tight text-white md:text-6xl">
+            <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               Built with{" "}
               <span className="bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400 bg-clip-text text-transparent">
                 love
@@ -47,7 +47,7 @@ export const BuiltWithLove = () => {
               .
             </h2>
 
-            <div className="space-y-6 text-lg text-gray-300 md:text-xl">
+            <div className="space-y-4 text-base text-gray-300 sm:space-y-5 sm:text-lg md:text-xl">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export const BuiltWithLove = () => {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-pink-500 via-rose-500 to-purple-500 opacity-40 blur-2xl"></div>
 
               {/* Photo Placeholder */}
-              <div className="relative h-96 w-96 overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-pink-500/20 via-rose-500/20 to-purple-500/20 shadow-2xl backdrop-blur-xl">
+              <div className="relative h-64 w-64 overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-br from-pink-500/20 via-rose-500/20 to-purple-500/20 shadow-2xl backdrop-blur-xl sm:h-80 sm:w-80 md:h-96 md:w-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-pink-400 via-rose-400 to-purple-500 opacity-30"></div>
 
                 {/* Decorative circles */}
