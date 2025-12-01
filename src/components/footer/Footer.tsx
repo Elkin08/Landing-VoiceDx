@@ -1,5 +1,5 @@
 import React from "react";
-import { SiInstagram, SiX, SiLinkedin } from "react-icons/si";
+import { SiInstagram, SiFacebook, SiWhatsapp } from "react-icons/si";
 import { FiShield, FiLock, FiCheck } from "react-icons/fi";
 import { IconType } from "react-icons";
 import Link from "next/link";
@@ -13,8 +13,10 @@ export const Footer = () => {
         <div className="absolute left-1/4 top-0 h-64 w-64 rounded-full bg-blue-600/10 blur-3xl filter"></div>
         <div className="absolute bottom-0 right-1/4 h-64 w-64 rounded-full bg-purple-600/10 blur-3xl filter"></div>
 
-        <div className="relative z-10 mb-12 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <LogoColumn />
+        <div className="relative z-10 mb-12 grid grid-cols-2 gap-8 sm:gap-12 md:grid-cols-3 lg:grid-cols-5">
+          <div className="col-span-2 md:col-span-1">
+            <LogoColumn />
+          </div>
           <GenericColumn
             title="Product"
             links={[
@@ -46,42 +48,42 @@ export const Footer = () => {
         </div>
 
         <div className="relative z-10 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-8 md:flex-row">
-          <span className="text-sm text-gray-400">
+          <span className="order-2 text-sm text-gray-400 md:order-1">
             © 2025 VoiceDx. All rights reserved.
           </span>
 
-          <div className="flex items-center gap-6">
+          <div className="order-1 flex items-center gap-6 md:order-2">
             <a
-              href="https://twitter.com/voicedx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative"
-            >
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 blur transition-opacity group-hover:opacity-50"></div>
-              <div className="relative rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white">
-                <SiX size={20} />
-              </div>
-            </a>
-            <a
-              href="https://linkedin.com/company/voicedx"
+              href="https://www.facebook.com/clinicai.co/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative"
             >
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 opacity-0 blur transition-opacity group-hover:opacity-50"></div>
-              <div className="relative rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white">
-                <SiLinkedin size={20} />
+              <div className="relative rounded-lg bg-white/10 p-2.5 text-white shadow-lg transition-all hover:bg-white/20 hover:text-white hover:shadow-xl">
+                <SiFacebook size={22} />
               </div>
             </a>
             <a
-              href="https://instagram.com/voicedx"
+              href="https://api.whatsapp.com/send/?phone=3144098357&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative"
+            >
+              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-green-500 to-green-600 opacity-0 blur transition-opacity group-hover:opacity-50"></div>
+              <div className="relative rounded-lg bg-white/10 p-2.5 text-white shadow-lg transition-all hover:bg-white/20 hover:text-white hover:shadow-xl">
+                <SiWhatsapp size={22} />
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/clinicai.co/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative"
             >
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 blur transition-opacity group-hover:opacity-50"></div>
-              <div className="relative rounded-lg p-2 text-gray-400 transition-colors hover:bg-white/10 hover:text-white">
-                <SiInstagram size={20} />
+              <div className="relative rounded-lg bg-white/10 p-2.5 text-white shadow-lg transition-all hover:bg-white/20 hover:text-white hover:shadow-xl">
+                <SiInstagram size={22} />
               </div>
             </a>
           </div>
@@ -93,8 +95,10 @@ export const Footer = () => {
 
 const LogoColumn = () => {
   return (
-    <div className="col-span-1 lg:col-span-1">
-      <LogoSmall />
+    <div className="col-span-1 text-center lg:col-span-1 lg:text-left">
+      <div className="inline-block scale-125 md:scale-110">
+        <LogoSmall />
+      </div>
       <p className="mt-4 text-sm leading-relaxed text-gray-400">
         AI-powered medical transcription for modern clinicians. Save time,
         reduce burnout, focus on patient care.

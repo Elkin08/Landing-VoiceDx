@@ -110,20 +110,20 @@ export const Pricing = () => {
             </span>
           </motion.div>
 
-          <h2 className="mb-4 text-3xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:mb-6 lg:text-6xl">
+          <h2 className="mb-3 text-2xl font-bold leading-tight text-white sm:mb-5 sm:text-4xl md:text-5xl lg:mb-6 lg:text-6xl">
             Choose Your{" "}
             <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
               Perfect Plan
             </span>
           </h2>
-          <p className="mx-auto max-w-3xl text-base leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
+          <p className="mx-auto max-w-3xl text-sm leading-relaxed text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
             Simple, transparent pricing that scales with your practice. Start
             with a free trial, no credit card required.
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="mx-auto mb-12 grid max-w-7xl gap-6 sm:mb-14 sm:gap-8 lg:mb-16 lg:grid-cols-3 lg:gap-6">
+        <div className="mx-auto mb-8 grid max-w-7xl gap-4 sm:mb-14 sm:gap-8 lg:mb-16 lg:grid-cols-3 lg:gap-6">
           {pricingTiers.map((tier, index) => (
             <motion.div
               key={tier.name}
@@ -139,7 +139,7 @@ export const Pricing = () => {
               ></div>
 
               <div
-                className={`relative flex h-full flex-col rounded-3xl p-8 backdrop-blur-2xl transition-all duration-300 ${
+                className={`relative flex h-full flex-col rounded-2xl p-5 backdrop-blur-2xl transition-all duration-300 sm:rounded-3xl sm:p-8 ${
                   tier.popular
                     ? "border-2 border-white/30 bg-gradient-to-br from-white/20 to-white/5 shadow-2xl"
                     : "border border-white/20 bg-gradient-to-br from-white/10 to-white/5 hover:border-white/30"
@@ -147,9 +147,9 @@ export const Pricing = () => {
               >
                 {/* Popular Badge */}
                 {tier.popular && (
-                  <div className="absolute -top-5 left-1/2 z-10 -translate-x-1/2 transform">
-                    <div className="flex animate-pulse items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 px-6 py-2 text-sm font-bold text-white shadow-2xl">
-                      <FiStar className="h-4 w-4 fill-current" />
+                  <div className="absolute -top-4 left-1/2 z-10 -translate-x-1/2 transform sm:-top-5">
+                    <div className="flex animate-pulse items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 px-4 py-1.5 text-xs font-bold text-white shadow-2xl sm:gap-2 sm:px-6 sm:py-2 sm:text-sm">
+                      <FiStar className="h-3 w-3 fill-current sm:h-4 sm:w-4" />
                       Most Popular
                     </div>
                   </div>
@@ -157,37 +157,41 @@ export const Pricing = () => {
 
                 {/* Icon with gradient background */}
                 <div
-                  className={`relative h-20 w-20 rounded-2xl bg-gradient-to-br ${tier.gradient} mb-6 flex items-center justify-center shadow-2xl ${tier.glowColor} group-hover:shadow-3xl transition-shadow`}
+                  className={`relative mb-4 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br ${tier.gradient} shadow-2xl ${tier.glowColor} group-hover:shadow-3xl transition-shadow sm:mb-6 sm:h-20 sm:w-20 sm:rounded-2xl`}
                 >
                   <tier.icon
-                    className="h-10 w-10 text-white"
+                    className="h-8 w-8 text-white sm:h-10 sm:w-10"
                     strokeWidth={2.5}
                   />
                 </div>
 
                 {/* Tier Info */}
-                <div className="mb-6">
-                  <h3 className="mb-2 text-3xl font-bold text-white">
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="mb-1.5 text-2xl font-bold text-white sm:mb-2 sm:text-3xl">
                     {tier.name}
                   </h3>
-                  <p className="mb-1 text-sm text-gray-300">{tier.subtitle}</p>
+                  <p className="mb-1 text-xs text-gray-300 sm:text-sm">
+                    {tier.subtitle}
+                  </p>
                   <p className="text-xs font-semibold text-blue-300">
                     {tier.clinicians}
                   </p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-8">
-                  <div className="flex items-baseline gap-2">
-                    <span className="bg-gradient-to-br from-white to-gray-200 bg-clip-text text-6xl font-extrabold text-transparent">
+                <div className="mb-6 sm:mb-8">
+                  <div className="flex items-baseline gap-1.5 sm:gap-2">
+                    <span className="bg-gradient-to-br from-white to-gray-200 bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl">
                       {tier.price}
                     </span>
-                    <span className="text-lg text-gray-400">{tier.period}</span>
+                    <span className="text-sm text-gray-400 sm:text-lg">
+                      {tier.period}
+                    </span>
                   </div>
                 </div>
 
                 {/* Features */}
-                <ul className="mb-10 flex-grow space-y-4">
+                <ul className="mb-6 flex-grow space-y-2.5 sm:mb-10 sm:space-y-4">
                   {tier.features.map((feature, idx) => (
                     <motion.li
                       key={idx}
@@ -195,17 +199,17 @@ export const Pricing = () => {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3, delay: idx * 0.05 }}
                       viewport={{ once: true }}
-                      className="flex items-start gap-3"
+                      className="flex items-start gap-2 sm:gap-3"
                     >
                       <div
-                        className={`h-6 w-6 flex-shrink-0 rounded-lg bg-gradient-to-br ${tier.gradient} flex items-center justify-center shadow-lg ${tier.glowColor}`}
+                        className={`flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${tier.gradient} shadow-lg ${tier.glowColor} sm:h-6 sm:w-6`}
                       >
                         <FiCheck
-                          className="h-4 w-4 text-white"
+                          className="h-3 w-3 text-white sm:h-4 sm:w-4"
                           strokeWidth={3}
                         />
                       </div>
-                      <span className="font-medium leading-relaxed text-gray-200">
+                      <span className="text-sm font-medium leading-relaxed text-gray-200 sm:text-base">
                         {feature}
                       </span>
                     </motion.li>
@@ -217,7 +221,7 @@ export const Pricing = () => {
                   href={CTA_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`group/btn relative block w-full transform overflow-hidden rounded-xl py-4 text-center font-bold transition-all hover:scale-105 ${
+                  className={`group/btn relative block w-full transform overflow-hidden rounded-xl py-3.5 text-center text-sm font-bold transition-all hover:scale-105 sm:py-4 sm:text-base ${
                     tier.popular
                       ? "bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 text-white shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/80"
                       : "border-2 border-white/30 bg-white/10 text-white backdrop-blur-sm hover:border-white/50 hover:bg-white/20"
@@ -239,13 +243,13 @@ export const Pricing = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 p-8 text-center backdrop-blur-xl"
+          className="rounded-xl border border-white/10 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 p-5 text-center backdrop-blur-xl sm:rounded-2xl sm:p-8"
         >
-          <p className="mb-2 text-lg text-gray-300">
+          <p className="mb-2 text-sm leading-relaxed text-gray-300 sm:text-lg">
             We're dedicated to making VoiceDx accessible to all aspiring
             clinicians.
           </p>
-          <p className="font-semibold text-white">
+          <p className="text-sm font-semibold text-white sm:text-base">
             If you're a student or trainee, please{" "}
             <a
               href={CTA_LINK}
