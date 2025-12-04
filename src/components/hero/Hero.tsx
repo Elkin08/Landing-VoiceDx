@@ -104,7 +104,7 @@ export const Hero = () => {
               <span className="font-semibold text-purple-400">
                 dedicated human assistance
               </span>
-              . Reclaim up to 2 hours every day.
+              . Reclaim hours every day.
             </motion.p>
 
             {/* CTAs */}

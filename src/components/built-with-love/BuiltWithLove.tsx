@@ -44,7 +44,7 @@ export const BuiltWithLove = () => {
             <span className="bg-gradient-to-r from-pink-400 via-rose-400 to-purple-400 bg-clip-text text-transparent">
               passion
             </span>{" "}
-            for clinicians
+            for physicians
           </h2>
 
           <p className="mx-auto max-w-3xl text-base text-gray-300 sm:text-lg md:text-xl lg:text-2xl">

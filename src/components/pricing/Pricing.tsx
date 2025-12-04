@@ -8,7 +8,7 @@ const pricingTiers = [
   {
     name: "Starter",
     subtitle: "Ideal for individual clinicians",
-    price: "$90",
+    price: "$99",
     period: "/mo",
     clinicians: "1 Clinician",
     icon: FiZap,
@@ -27,7 +27,7 @@ const pricingTiers = [
   {
     name: "Professional",
     subtitle: "Designed for expanding teams",
-    price: "$84",
+    price: "$85",
     period: "/mo per clinician",
     clinicians: "2-9 Clinicians",
     popular: true,
